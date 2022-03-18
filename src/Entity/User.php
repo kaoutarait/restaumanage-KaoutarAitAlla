@@ -27,6 +27,13 @@ class User
      */
     private $password;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=city::class, inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $city_id;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -55,4 +62,18 @@ class User
 
         return $this;
     }
+
+    public function getCityId(): ?city
+    {
+        return $this->city_id;
+    }
+
+    public function setCityId(?city $city_id): self
+    {
+        $this->city_id = $city_id;
+
+        return $this;
+    }
+
+
 }
