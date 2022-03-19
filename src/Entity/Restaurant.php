@@ -32,6 +32,12 @@ class Restaurant
      */
     private $created_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=city::class, inversedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $city_id;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -69,6 +75,17 @@ class Restaurant
     public function setCreatedAt(?\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+    public function getCityId(): ?city
+    {
+        return $this->city_id;
+    }
+
+    public function setCityId(?city $city_id): self
+    {
+        $this->city_id = $city_id;
 
         return $this;
     }

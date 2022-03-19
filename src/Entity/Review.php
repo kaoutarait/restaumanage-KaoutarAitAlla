@@ -34,13 +34,13 @@ class Review
 
     /**
      * @ORM\ManyToOne(targetEntity=restaurant::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $restaurant_id;
 
     /**
      * @ORM\ManyToOne(targetEntity=user::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $user_id;
 

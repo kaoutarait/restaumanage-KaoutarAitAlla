@@ -29,7 +29,7 @@ class User
 
     /**
      * @ORM\ManyToOne(targetEntity=city::class, inversedBy="users")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $city_id;
 
